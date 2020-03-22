@@ -1,0 +1,42 @@
+<div class="card" style="max-width: 540px;">
+  <div class="card-header">
+
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+     <%= form.label :title %>
+     <%= form.text_field :title %>
+    </li>
+    <li class="list-group-item">
+      <div class="field">
+       <%= form.label :image %>
+       <%= form.file_field :image %>
+      </div>
+    </li>
+     <li class="list-group-item">
+      <div class="field">
+       <%= form.label :description %>
+       <%= form.text_area :description %>
+     </div>
+    </li>
+    <li class="list-group-item">
+    <div class="actions">
+     <%= form.submit  %>
+   </div>
+    </li>
+  </ul>
+  <% end %>
+</div>
+

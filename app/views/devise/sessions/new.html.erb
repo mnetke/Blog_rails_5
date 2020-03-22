@@ -1,0 +1,20 @@
+<h2>Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="card" style="max-width: 540px;">
+  <div class="card-header">
+  <label for="email">Enter Email:</label>
+  <%= f.email_field :email%> <br>
+ <label for="password">Password: &nbsp;</label>  
+  <%= f.password_field :password, required: true%>            
+  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  
+
+  <button type="submit" class="btn btn-primary">
+  <i class="icon-user icon-white"></i> Sign in
+</button>
+
+<% end %>
+</div>
+</div>
+<%= render "devise/shared/links" %>

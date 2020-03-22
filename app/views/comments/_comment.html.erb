@@ -1,0 +1,24 @@
+ 
+<div class="box">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+        <div class="card mb-3" style="max-width: 1000px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+                <p>
+                  <strong><%= comment.name %>:</strong>
+                  <p class="card-text"><%= comment.comment %></p>
+               </p>
+               <% if comment.user == current_user%>
+               <p>   
+                  <%= link_to 'Delete',[comment.post, comment], method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+               </p>
+               <%end%>
+            </div>
+         </div>
+      </div>
+      </div>
+    </div>
+  </article>
+</div>
