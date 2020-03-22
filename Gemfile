@@ -51,8 +51,6 @@ group :development do
   gem 'guard', '~> 2.14', '>= 2.14.1'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
   gem 'simple_form'
-  gem "paperclip", require: false
-
 end
 
 group :development, :test do
@@ -77,4 +75,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'rails_12factor', group: :production
+group :production, :development, :test do
+  gem 'rails_12factor'
+  gem "paperclip" 
+end
+
